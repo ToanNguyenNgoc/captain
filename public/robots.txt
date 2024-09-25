@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://riseoftheunderdogs.com/
+
+# Sitemaps
+Sitemap: https://riseoftheunderdogs.com/sitemap.xml

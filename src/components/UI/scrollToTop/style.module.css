@@ -1,0 +1,14 @@
+.scroll_to_top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+.scroll_to_top_btn {
+  background-color: var(--secondary-cl);
+  padding: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 2px solid var(--primary-cl);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

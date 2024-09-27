@@ -49,9 +49,15 @@ interface IOrderFormProps {
 export function OrderForm(props: IOrderFormProps) {
   const { selectedTickets, open, setOpen } = props
   const [openPayment, setOpenPayment] = useState(false)
+  const [openNotification, setOpenNotification] = useState(false)
   const IS_MB = useMediaQuery('(max-width:767px)')
   const [refreshReCaptcha, setRefreshReCaptcha] = useState<boolean>(false)
   const [captcha, setCaptcha] = useState('')
+
+  const handleClosePayment = () => {
+    setOpenPayment(false)
+    setOpenNotification(true)
+  }
   const verifyRecaptchaCallback = useCallback((token: string) => {
     setCaptcha(token)
   }, [])
@@ -405,13 +411,15 @@ export function OrderForm(props: IOrderFormProps) {
           />
         </GoogleReCaptchaProvider>
       </Dialog>
-      <Dialog onClose={() => setOpenPayment(false)} open={openPayment}>
+
+      {/* popup payment */}
+      <Dialog onClose={handleClosePayment} open={openPayment}>
         <div className={style.dialog__content}>
           <div className={style.tiket__dialog__header}>
             <p className={style.tiket__dialog__title}>Thông tin chuyển khoản</p>
             <CgClose
               className={style.close__dialog}
-              onClick={() => setOpenPayment(false)}
+              onClick={handleClosePayment}
               size={28}
               color="var(--secondary-cl)"
             />
@@ -446,6 +454,27 @@ export function OrderForm(props: IOrderFormProps) {
                 </span>
               </p>
             </div>
+          </div>
+        </div>
+      </Dialog>
+
+      {/* Popup noti */}
+      <Dialog
+        onClose={() => setOpenNotification(false)}
+        open={openNotification}
+      >
+        <div className={style.dialog__content}>
+          <div className={style.tiket__dialog__header}>
+            <p className={style.tiket__dialog__title}>Thông báo</p>
+            <CgClose
+              className={style.close__dialog}
+              onClick={() => setOpenNotification(false)}
+              size={28}
+              color="var(--secondary-cl)"
+            />
+          </div>
+          <div className={style.notification__content}>
+            <p>Quý khách vui lòng đợi phản hồi qua email trong vòng 24 giờ.</p>
           </div>
         </div>
       </Dialog>

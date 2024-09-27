@@ -140,6 +140,9 @@
   color: var(--secondary-cl);
   font-weight: bold;
 }
+.notification__content p {
+  color: var(--black-cl);
+}
 @keyframes bouncingCard {
   from {
     transform: translateY(0);

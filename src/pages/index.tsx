@@ -25,7 +25,7 @@ export default function Home({ tickets }: HomeProps) {
     <>
       <Seo
         title="Trang chủ"
-        description="Website chính thức bán vé cho show diễn Riseoftheunderdogs"
+        description="Website chính thức bán vé cho show diễn Captian"
         url={router.pathname}
         image_url="../../public/img_url_seo.png"
       />

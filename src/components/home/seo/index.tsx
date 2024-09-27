@@ -10,7 +10,7 @@ interface SeoProps {
 
 export function Seo(props: SeoProps) {
   const domain = 'https://riseoftheunderdogs.com'
-  const name = 'Riseoftheunderdogs'
+  const name = 'Captian'
   const { title, description, url, image_url } = props
 
   return (
@@ -20,7 +20,7 @@ export function Seo(props: SeoProps) {
       <meta name="description" content={description} />
       <meta
         name="keywords"
-        content="Riseoftheunderdogs, sell tickets, sellticket, bán vé, sell tickets, bán vé show diễn riseoftheunderdogs, riseoftheunderdogs, rise of the under dogs, bán vé bray, sell tickets bray"
+        content="Captian, sell tickets, sellticket, bán vé, sell tickets, bán vé show diễn Captian, Captian, rise of the under dogs, bán vé bray, sell tickets bray"
       />
       <meta name="author" content={name} />
       <meta

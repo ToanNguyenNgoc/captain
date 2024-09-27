@@ -48,7 +48,7 @@ interface IOrderFormProps {
 
 export function OrderForm(props: IOrderFormProps) {
   const { selectedTickets, open, setOpen } = props
-  const [openPayment, setOpenPayment] = useState(true)
+  const [openPayment, setOpenPayment] = useState(false)
   const IS_MB = useMediaQuery('(max-width:767px)')
   const [refreshReCaptcha, setRefreshReCaptcha] = useState<boolean>(false)
   const [captcha, setCaptcha] = useState('')

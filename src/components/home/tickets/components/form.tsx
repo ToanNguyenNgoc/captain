@@ -67,7 +67,6 @@ export function OrderForm(props: IOrderFormProps) {
   } = useForm<FormData>({ defaultValues: { ...defaultValues } })
 
   const onSubmit = async (data: FormData) => {
-    console.log('submit')
     if (captcha === '') {
       setRefreshReCaptcha((r) => !r)
       return
@@ -77,15 +76,19 @@ export function OrderForm(props: IOrderFormProps) {
       id,
       quantity: Number(data.quantity),
     }))
-    const newData = {
+
+    const newData: any = {
       fullname: data.fullname,
       date_of_birth: data.dob,
       email: data.email,
-      facebook: data.facebook,
       telephone: data.phone,
       note: data.description,
       productable: tickets,
       // recaptcha: captcha,
+    }
+
+    if (data.facebook) {
+      newData.facebook = data.facebook
     }
 
     console.log(newData)

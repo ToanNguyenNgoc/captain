@@ -1,4 +1,4 @@
-export interface ITicket {
+interface ITicket {
   id: number
   title: string
   content: string
@@ -14,7 +14,7 @@ export interface ITicket {
   updated_at: string
 }
 
-export interface IProductable {
+interface IProductable {
   id: number
   quantity: number
   base_price: number
@@ -25,12 +25,12 @@ export interface IOrderTikets {
   id: number
   tran_uid: string
   fullname: string
-  date_of_birth: string // ISO date string
+  date_of_birth: string
   email: string
   facebook: string
   telephone: string
   note: string
-  status: string // "PENDING" | "COMPLETED" | ...
+  status: string
   amount: number
   check_in: boolean
   deleted_at: string | null

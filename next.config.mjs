@@ -25,9 +25,9 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'riseoftheunderdogs',
+        hostname: 'api.baokhanhdev.com',
         port: '',
-        pathname: '/assets/images/**',
+        pathname: '/media/**',
       },
     ],
   },

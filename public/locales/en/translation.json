@@ -5,5 +5,14 @@
   "artist": "Artist",
   "ticket": "Ticket",
   "location": "Location",
-  "timeLine": "Timeline"
+  "timeLine": "Timeline",
+  "chooseYourTickets": "Choose your tickets and enter the quantity.",
+  "bannedWork": "Prohibited to bring:",
+  "Oversized banners or items obstructing the view": "Oversized banners or items obstructing the view",
+  "Alcoholic beverages and stimulants": "Alcoholic beverages and stimulants",
+  "Flammable substances, weapons, and dangerous items": "Flammable substances, weapons, and dangerous items",
+  "Pushing and shoving": "Pushing and shoving",
+  "Photography in restricted areas": "Photography in restricted areas",
+  "Offensive or aggressive behavior": "Offensive or aggressive behavior",
+  "Prohibited actions": "Prohibited actions"
 }

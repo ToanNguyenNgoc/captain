@@ -54,7 +54,7 @@ export function Header() {
           <span className={style.line}></span>
         </button>
         <Link href="/" className={style.header_logo} aria-label="Homepage">
-          Sell Tickets
+          Captian Boy
         </Link>
       </div>
       <HeaderNav handleRemoveHambuger={handleRemoveHambuger} />
@@ -99,7 +99,7 @@ const HeaderNav = (props: IProps) => {
           <Link href="#location">{t('location')}</Link>
         </li>
         <li onClick={handleRemoveHambuger} className={style.nav_li}>
-          <Link href="#timeline">{t('timeline')}</Link>
+          <Link href="#timeline">{t('timeLine')}</Link>
         </li>
       </ul>
     </nav>

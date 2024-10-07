@@ -9,3 +9,7 @@
 .titleEnd {
   text-align: right;
 }
+.description {
+  font-size: 20px;
+  line-height: 1.5;
+}

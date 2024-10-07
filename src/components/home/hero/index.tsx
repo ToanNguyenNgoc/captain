@@ -7,25 +7,22 @@ import classNames from 'classnames'
 import Link from 'next/link'
 import { useCountdown } from '@/hooks'
 import { COUNT_DOWN } from '@/constants'
-
 export function Hero() {
   const targetDate = new Date(COUNT_DOWN)
   const { isExpired } = useCountdown(targetDate)
+
   return (
-    <section className={classNames(style.hero, 'right')}>
+    <section style={{}} className={classNames(style.hero, 'right')}>
       <div className={style.hero__bg}></div>
       <Container style={{ zIndex: '2' }} maxWidth={'lg'}>
         <div className={style.hero__content}>
           <div className={style.hero__left}>
-            <h1 className={style.hero__txt}>Underdog Show Sell Stickets</h1>
+            {/* <h1 className={style.hero__txt}>Underdog Show Sell Tickets</h1>
             <p className={style.hero__desc}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Similique, impedit.
             </p>
-            <Link
-              style={isExpired ? { pointerEvents: 'none' } : {}}
-              href={'#buy'}
-            >
+            <Link href="#buy" passHref>
               <Button
                 disabled={isExpired}
                 size="large"
@@ -34,17 +31,18 @@ export function Hero() {
               >
                 {isExpired ? 'Hết hạn đăng ký' : 'Buy now'}
               </Button>
-            </Link>
+            </Link> */}
           </div>
-          <div className={style.hero__img}>
+          {/* <div className={style.hero__img}>
             <Image
               src={imgs.heroImg}
-              sizes="100%"
               alt="hero_img"
-              height={0}
-              width={0}
+              sizes="100%"
+              layout="responsive"
+              height={500}
+              width={500}
             />
-          </div>
+          </div> */}
         </div>
       </Container>
     </section>

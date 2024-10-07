@@ -97,7 +97,6 @@ export function OrderForm(props: IOrderFormProps) {
       newData.facebook = data.facebook
     }
 
-    console.log(newData)
     mutate(newData)
   }
 

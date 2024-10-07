@@ -6,10 +6,11 @@ export interface ITicket {
   date_start: string
   date_end: string
   price: number
-  price_sale: number
-  note: string
-  address: string
+  price_sale: number | null
+  note: string | null
+  address: string | null
   created_at: string
   updated_at: string
   deleted_at: string | null
+  image_url: string | null
 }

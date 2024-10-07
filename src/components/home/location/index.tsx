@@ -5,6 +5,7 @@ import { Title } from '@/components/UI/title'
 import mapboxgl, { Map } from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { KEY_MAPBOX } from '@/constants'
+import { useTranslation } from 'react-i18next'
 
 mapboxgl.accessToken = KEY_MAPBOX
 
@@ -13,7 +14,7 @@ const defaultCenter = [106.7010858, 10.7739888] as [number, number]
 export function Location() {
   const [map, setMap] = useState<Map | null>(null)
   const mapContainerRef = useRef<HTMLDivElement | null>(null)
-
+  const { t } = useTranslation()
   useEffect(() => {
     if (mapContainerRef.current && !map) {
       const initializeMap = () => {
@@ -52,7 +53,7 @@ export function Location() {
     <section id="location" className="right">
       <Container>
         <Title
-          title="Location"
+          title={t('location')}
           position="center"
           description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, minima."
         />

@@ -25,7 +25,7 @@ const theme = createTheme({
       contrastText: '#fff',
     },
     secondary: {
-      main: '#ff9800',
+      main: '#fbb313',
       contrastText: '#fff',
     },
     action: {

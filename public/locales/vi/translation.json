@@ -5,5 +5,14 @@
   "artist": "Nghệ sĩ",
   "ticket": "Vé",
   "location": "Vị trí",
-  "timeLine": "Mốc thời gian"
+  "timeLine": "Mốc thời gian",
+  "chooseYourTickets": "Chọn vé của bạn và nhập số lượng.",
+  "bannedWork": "Cấm mang theo:",
+  "Oversized banners or items obstructing the view": "Biểu ngữ quá khổ hoặc vật phẩm gây cản trở tầm nhìn",
+  "Alcoholic beverages and stimulants": "Đồ uống có cồn và chất kích thích",
+  "Flammable substances, weapons, and dangerous items": "Chất dễ cháy nổ, Vũ khí và vật dụng nguy hiểm",
+  "Pushing and shoving": "Xô đẩy và chen lấn",
+  "Photography in restricted areas": "Chụp ảnh trong khu vực cấm",
+  "Offensive or aggressive behavior": "Hành vi xúc phạm hoặc công kích",
+  "Prohibited actions": "Cấm làm"
 }

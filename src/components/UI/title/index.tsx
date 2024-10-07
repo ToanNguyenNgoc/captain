@@ -21,7 +21,7 @@ export function Title(props: IProps) {
       })}
     >
       <h2>{title}</h2>
-      <p>{description}</p>
+      <p className={styles.description}>{description}</p>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import heroImg from './hero-man.jpg'
+import heroBG from './hero.jpg'
 import bgTimeline from './bg-timeline.png'
 import momo from './momo.png'
 import vnpay from './vnpay.jpg'
@@ -12,6 +13,7 @@ import imgUrlSeo from './img_url_seo.png'
 import qrcode from './qrcode.jpg'
 
 export const imgs = {
+  heroBG,
   qrcode,
   imgUrlSeo,
   viFlag,

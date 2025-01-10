@@ -21,6 +21,7 @@ interface HomeProps {
 
 export default function Home({ tickets }: HomeProps) {
   const router = useRouter()
+  console.log(tickets)
   return (
     <>
       <Seo

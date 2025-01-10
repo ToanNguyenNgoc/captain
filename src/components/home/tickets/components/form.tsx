@@ -7,7 +7,13 @@ import { Box, Container, Dialog, Grid, useMediaQuery } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
 import { AxiosError } from 'axios'
 import Image from 'next/image'
-import { Dispatch, SetStateAction, useCallback, useState } from 'react'
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import {
   GoogleReCaptcha,
   GoogleReCaptchaProvider,
@@ -17,6 +23,7 @@ import { CgClose } from 'react-icons/cg'
 import { IoCopySharp } from 'react-icons/io5'
 import { toast } from 'react-toastify'
 import style from './style.module.css'
+import { useRecaptcha } from '@/hooks'
 
 interface FormData {
   fullname: string
@@ -48,19 +55,21 @@ interface IOrderFormProps {
 
 export function OrderForm(props: IOrderFormProps) {
   const { selectedTickets, open, setOpen } = props
+  const {
+    recaptcha_key,
+    recaptcha,
+    refreshReCaptcha,
+    onRefreshRecaptcha,
+    verifyRecaptchaCallback,
+  } = useRecaptcha()
   const [openPayment, setOpenPayment] = useState(false)
   const [openNotification, setOpenNotification] = useState(false)
   const IS_MB = useMediaQuery('(max-width:767px)')
-  const [refreshReCaptcha, setRefreshReCaptcha] = useState<boolean>(false)
-  const [captcha, setCaptcha] = useState('')
 
   const handleClosePayment = () => {
     setOpenPayment(false)
     setOpenNotification(true)
   }
-  const verifyRecaptchaCallback = useCallback((token: string) => {
-    setCaptcha(token)
-  }, [])
   const copyToClipboard = () => {
     navigator.clipboard.writeText('9909052000')
     toast.success('Sao chép thành công!')
@@ -73,11 +82,6 @@ export function OrderForm(props: IOrderFormProps) {
   } = useForm<FormData>({ defaultValues: { ...defaultValues } })
 
   const onSubmit = async (data: FormData) => {
-    if (captcha === '') {
-      setRefreshReCaptcha((r) => !r)
-      return
-    }
-
     const tickets = selectedTickets.map((id) => ({
       id,
       quantity: Number(data.quantity),
@@ -90,7 +94,7 @@ export function OrderForm(props: IOrderFormProps) {
       telephone: data.phone,
       note: data.description,
       productable: tickets,
-      // recaptcha: captcha,
+      recaptcha,
     }
 
     if (data.facebook) {
@@ -107,10 +111,12 @@ export function OrderForm(props: IOrderFormProps) {
         setOpenPayment(true)
       }
       reset()
+      onRefreshRecaptcha()
     },
     onError: (error: AxiosError<any>) => {
       console.error('Error:', error.response?.data)
       toast.error(error?.message)
+      onRefreshRecaptcha()
     },
   })
 
@@ -122,7 +128,7 @@ export function OrderForm(props: IOrderFormProps) {
         open={open}
       >
         <GoogleReCaptchaProvider
-          reCaptchaKey={process.env.NEXT_PUBLIC_KEY_CAPTCHA || ''}
+          reCaptchaKey={recaptcha_key}
           scriptProps={{
             async: true,
             defer: true,

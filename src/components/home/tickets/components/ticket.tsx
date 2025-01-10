@@ -70,11 +70,13 @@ const Ticket: React.FC<TicketProps> = ({ ticket }) => {
         </div>
       </div>
       <div className={styles.ticketShadow}></div>
-      <OrderForm
-        selectedTickets={selectedTickets}
-        open={open}
-        setOpen={setOpen}
-      />
+      {open && (
+        <OrderForm
+          selectedTickets={selectedTickets}
+          open={open}
+          setOpen={setOpen}
+        />
+      )}
     </div>
   )
 }

@@ -10,6 +10,6 @@ export interface IRQOrderTikets {
   facebook: string
   telephone: string
   note: string
-  // recaptcha: string
+  recaptcha?: string
   productable: Ticket[]
 }
